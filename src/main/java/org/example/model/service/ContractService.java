@@ -17,13 +17,11 @@ public class ContractService {
             LocalDate installmentDate = contract.getDate().plusMonths(i);
             Double installmentAmount = contract.getTotalValue() / months;
             Double installmentWithInterest = ops.interest(installmentAmount, i);
-            System.out.println(installmentWithInterest);
             Double installmentInterestAndFee = ops.paymentFee(installmentWithInterest + installmentAmount);
-            System.out.println(installmentInterestAndFee);
-            
 
-            System.out.println(installmentDate + " " + installmentAmount);
+            double totalInstallment = installmentAmount + installmentWithInterest + installmentInterestAndFee;
+            installments.add(new Installment(installmentDate, totalInstallment));
+            contract.setInstallments(installments);
         }
-        System.out.println(installments);
     }
 }

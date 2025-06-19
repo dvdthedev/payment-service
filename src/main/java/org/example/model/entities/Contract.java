@@ -1,9 +1,7 @@
 package org.example.model.entities;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class Contract {
@@ -47,6 +45,10 @@ public class Contract {
 
     public void setInstallments(ArrayList<Installment> installments) {
         this.installments = installments;
+    }
+
+    public ArrayList<Installment> getInstallments() {
+        return installments;
     }
 
     @Override

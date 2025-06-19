@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.model.entities.Contract;
+import org.example.model.entities.Installment;
 import org.example.model.service.ContractService;
 
 import java.text.ParseException;
@@ -32,8 +33,10 @@ public class Main {
         ContractService cs = new ContractService();
         cs.processContract(contract, installments);
 
-
-        System.out.println(contract);
+        System.out.println("Parcelas: ");
+        for(Installment installmentsList : contract.getInstallments()){
+            System.out.println(installmentsList);
+        }
 
     }
 }
