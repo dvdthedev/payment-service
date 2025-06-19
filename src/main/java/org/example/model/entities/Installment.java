@@ -12,6 +12,14 @@ public class Installment {
         this.amount = amount;
     }
 
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
     @Override
     public String toString() {
         return  dueDate +

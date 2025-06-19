@@ -35,7 +35,7 @@ public class Main {
 
         System.out.println("Parcelas: ");
         for(Installment installmentsList : contract.getInstallments()){
-            System.out.println(installmentsList);
+            System.out.println(sdf.format(installmentsList.getDueDate()) + " - " + installmentsList.getAmount());
         }
 
     }
